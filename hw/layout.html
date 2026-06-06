@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard Grid Layout</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#111827;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      color:white;
+    }
+
+    .dashboard{
+      width:1000px;
+      display:grid;
+      grid-template-columns: 200px 1fr 1fr 1fr;
+      grid-template-rows: 70px 100px 220px 120px;
+      gap:10px;
+    }
+
+    .box{
+      border-radius:10px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:24px;
+      font-weight:bold;
+      border:2px solid white;
+    }
+
+    /* Sidebar */
+    .sidebar{
+      grid-row:1 / 5;
+      background:linear-gradient(to bottom,#0ea5e9,#2563eb);
+    }
+
+    /* Top Navigation */
+    .topnav{
+      grid-column:2 / 5;
+      background:linear-gradient(to right,#14b8a6,#22c55e);
+    }
+
+    /* Small Cards */
+    .users{
+      background:#06b6d4;
+    }
+
+    .revenue{
+      background:#22c55e;
+    }
+
+    .orders{
+      background:#f59e0b;
+    }
+
+    /* Chart */
+    .chart{
+      grid-column:2 / 4;
+      background:#8b5cf6;
+    }
+
+    /* Table */
+    .table{
+      background:#ec4899;
+    }
+
+    /* Bottom Widgets */
+    .widget{
+      background:#06b6d4;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="dashboard">
+
+    <div class="box sidebar">Sidebar</div>
+
+    <div class="box topnav">Top Navigation</div>
+
+    <div class="box users">Users</div>
+    <div class="box revenue">Revenue</div>
+    <div class="box orders">Orders</div>
+
+    <div class="box chart">Chart (span 2)</div>
+
+    <div class="box table">Table</div>
+
+    <div class="box widget">Widget 1</div>
+    <div class="box widget">Widget 2</div>
+    <div class="box widget">Widget 3</div>
+
+  </div>
+
+</body>
+</html>
