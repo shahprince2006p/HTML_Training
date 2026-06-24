@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: 200px 1fr 200px ;
+            grid-template-rows: 80px 1fr 60px ;
+            grid-template-areas: "kash kash mp mp"
+                                 "kash kash mp mp"
+                                 "rajas rajas rajas rajas"
+                                 "bihar bihar uk uk";
+            gap: 12px;
+            height: 100vh;
+            border: 1px solid black;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <div class="b1"></div>
+        <div class="b2"></div>
+        <div class="b3"></div>
+        <div class="b4"></div>
+        <div class="b5"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+    padding:40px;
+}
+
+.container{
+    max-width:1400px;
+    margin:auto;
+}
+
+h1{
+    margin-bottom:30px;
+    color:#222;
+}
+
+.tabs{
+    display:flex;
+    gap:35px;
+    margin-bottom:20px;
+    font-size:20px;
+    color:#333;
+}
+
+.tabs span{
+    padding-bottom:10px;
+    cursor:pointer;
+}
+
+.tabs .active{
+    color:#0066ff;
+    border-bottom:3px solid #0066ff;
+}
+
+.card{
+    background:white;
+    border-radius:25px;
+    padding:25px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+.search-row{
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    border-radius:15px;
+}
+
+.station,
+.date{
+    background:#f3f3f3;
+    padding:18px 25px;
+    flex:1;
+}
+
+.station label,
+.date label{
+    color:#666;
+    font-size:14px;
+}
+
+.station h2,
+.date h3{
+    margin-top:8px;
+    font-weight:500;
+}
+
+.swap{
+    width:60px;
+    height:60px;
+    background:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+    margin:0 -20px;
+    z-index:1;
+}
+
+button{
+    width:340px;
+    height:95px;
+    border:none;
+    background:#ff7a00;
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.bottom-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:25px;
+}
+
+.refund{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:22px;
+}
+
+.refund input{
+    width:28px;
+    height:28px;
+}
+
+.features{
+    display:flex;
+    gap:30px;
+    color:#444;
+    font-size:15px;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+    gap: 1px;
+    height: 500px;
+    width: 500px;
+    justify-items: center;
+    align-items: center;
+    
+}
+
+.box{
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+    height: 20px;
+    width: 20px;
+}
+#b1{
+    justify-self: end;
+    align-self: end;
+    background-color: blue;
+}
+#b3{
+     justify-self: end;
+    align-self: start;
+    background-color: burlywood;
+}
+#b4{
+    justify-self: start;
+    background-color: blueviolet;
+}
+#b5{
+justify-self: end;
+background-color: brown;
+}
+#b6{
+    justify-self: start;
+    background-color: aqua;
+}
+#b7{
+    justify-self: start;
+    align-self: end;
+    background-color: bisque;
+}
+#b8{
+    align-self: start;
+    background-color: darkgreen;
+}
+#b9{
+    justify-self: end;
+    background-color: dimgrey;
+}
+
+
+    </style>
+</head>
+<body>
+   <div class="container">
+    <div class="box" id="b1">1</div>
+    <div class="box" id="b2">2</div>
+    <div class="box" id="b3">3</div>
+    <div class="box" id="b4">4</div>
+    <div class="box" id="b5">5</div>
+    <div class="box" id="b6">6</div>
+     <div class="box" id="b7">7</div>
+    <div class="box" id="b8">8</div>
+    <div class="box" id="b9">9</div>
+   </div>
+</body>
+</html>
