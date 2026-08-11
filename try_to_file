@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      *{
+        margin: 0px;
+        padding: 0px;
+      }
+      .ground {
+        bottom: 0;
+        width: 98vw;
+        height: 50px;
+        border: 2px solid black;
+        position: relative;
+        background-color: green;
+        top: 260px;
+      }
+      .mario {
+        width: 7%;
+        height: 50px;
+        position: relative;
+        top: 150px;
+      }
+      .obstacle {
+        width: 25px;
+        height: 50px;
+        position: relative; 
+        top: 98px;
+        left: 300px;
+      }
+      img{
+        height: 50px; 
+      }
+      .im2{
+          width: 25px;
+      }
+    </style>
+  </head>
+  <body>
+
+
+    <div class="ground"></div>
+    <div class="mario"><img src="mar.jpeg" alt="mario"></div>
+    <div class="obstacle"><img src="obs.jpg" alt="" class="im2"></div>
+
+  </body>
+
+  <script>
+
+    let ground = document.querySelector(".ground");
+    let mario = document.querySelector(".mario");
+    let obstacle = document.querySelector(".obstacle");
+
+    let marioRect = mario.getBoundingClientRect();
+    let currentTop =160 ;
+    let velocity = -5;
+    let gravity = 5;
+    let maxHeight = 50;
+    let isJumping = false;
+    let direction = "up";
+    let groundTop = 150;
+
+    let currentLeft = 0;
+    let movingSpeed = 5;
+
+  function jump() {
+  if (!isJumping) return;
+
+  if (direction === "up") {
+    currentTop += velocity;
+
+    if (currentTop <= maxHeight) {
+      currentTop = maxHeight;
+      direction = "down";
+    }
+  } else {
+    currentTop += gravity;
+
+    if (currentTop >= groundTop) {
+      currentTop = groundTop;
+      isJumping = false; // Mario landed
+    }
+  }
+
+  mario.style.top = currentTop + "px";
+
+  if (isJumping) {
+    requestAnimationFrame(jump);
+  }
+}
+
+function checkCollision() {
+  const marioRect = mario.getBoundingClientRect();
+  const obstacleRect = obstacle.getBoundingClientRect();
+
+  const collided =
+    marioRect.right > obstacleRect.left &&
+    marioRect.left < obstacleRect.right &&
+    marioRect.bottom > obstacleRect.top &&
+    marioRect.top < obstacleRect.bottom;
+
+  if (collided) {
+    alert("Game Over");
+  } else {
+    requestAnimationFrame(checkCollision);
+  }
+}
+
+checkCollision();
+
+    function right() {
+      currentLeft += movingSpeed;
+      mario.style.left = currentLeft + "px";
+    }
+
+    function left() {
+      currentLeft -= movingSpeed;
+      mario.style.left = currentLeft + "px";
+    }
+
+    function checkCollision() {
+
+      let marioRect = mario.getBoundingClientRect();
+      let obstacleRect = obstacle.getBoundingClientRect();
+
+      if(marioRect.x >= obstacleRect.x){
+        alert("Game Over");
+      }
+      
+
+      requestAnimationFrame(checkCollision);
+
+    }
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "w") {
+        isJumping = true;
+        direction = "up";
+        jump();
+      } else if (e.key === "d") {
+        right();
+      } else if (e.key === "a") {
+        left();
+      }
+    });
+
+    
+  </script>
+</html>
